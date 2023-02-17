@@ -16,7 +16,7 @@ var config = {
     }
 };
 
-var player,player2;
+var player;
 var stars;
 var bombs;
 var platforms;
@@ -27,7 +27,7 @@ var scoreText;
 
 
 var game = new Phaser.Game(config);
-var entities={};
+// var entities={};
 function preload() {
 
     this.load.image('sky', '../assets/sky.png');
@@ -40,12 +40,12 @@ function preload() {
 function create() {
 
     
-    setInterval(function() {
-        sendData(uid,{[uid]:{x:player.x,y:player.y}});
-    }, 10000)
-    setInterval(function() {
-        entities = getData(uid);
-    }, 10000)
+    // setInterval(function() {
+    //     sendData(uid,{[uid]:{x:player.x,y:player.y}});
+    // }, 10000)
+    // setInterval(function() {
+    //     entities = getData(uid);
+    // }, 10000)
     //  A simple background for our game
     this.add.image(400, 300, 'sky');
 
@@ -63,7 +63,7 @@ function create() {
 
     // The player and its settings
     player = this.physics.add.sprite(100, 450, 'dude');
-    player2 = this.physics.add.sprite(100, 550, 'dude');
+
 
     //  Player physics properties. Give the little guy a slight bounce.
     player.setBounce(0.2);
